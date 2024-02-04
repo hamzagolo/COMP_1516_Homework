@@ -198,15 +198,16 @@ def get_capitals_and_countries_that_begin_and_end_with_same_letter():
     Returns a list of capitals and countries that begin and end with the same letter
     :return: List of capitals and countries, list
     """
-    list_of_countries_and_capitals = []
+    list_of_countries, list_of_capitals = [], []
 
     for country, capital in countries_and_capitals:
-        if country[0] == country[-1]:
-            list_of_countries_and_capitals.append(country)
-        if capital[0] == capital[-1]:
-            list_of_countries_and_capitals.append(capital)
 
-    return list_of_countries_and_capitals
+        if country[0].lower() == country[-1]:
+            list_of_countries.append(country)
+        if capital[0].lower() == capital[-1]:
+            list_of_capitals.append(capital)
+
+    return list_of_countries + list_of_capitals
 
 
 def print_countries_in_reverse_alphabetical_order():
@@ -219,21 +220,21 @@ def print_countries_in_reverse_alphabetical_order():
 
 
 def main():
-
-    #print(how_many_countries())
+    # print(how_many_countries())
     #print(get_name_of_longest_country())
     #print(get_number_of_capitals_containing('e'))
     #print(get_number_of_capitals_containing('z'))
     #print(get_number_of_capitals_containing("'"))
     #print(get_number_of_capitals_containing('an'))
-    print(get_countries_and_capitals_that_start_with_the_same_letter())
+    #print(get_countries_and_capitals_that_start_with_the_same_letter())
     #print(get_capital_of('canada'))
     #print(get_capital_of('nEW zeaLAND'))
     #print(get_capital_of('xyz'))
     #print(get_list_of_countries_with_this_many_letters_in_name(11))
     #print(get_list_of_countries_with_this_many_letters_in_name(15))
-    #print(get_countries_and_capitals_that_start_with_the_same_letter())
-
+    #print(get_capitals_and_countries_that_begin_and_end_with_same_letter())
+    #print(print_countries_in_reverse_alphabetical_order())
+    pass
 
 if __name__ == "__main__":
     main()
