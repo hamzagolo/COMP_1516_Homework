@@ -60,7 +60,7 @@ def get_day_of_the_week(month, day, year):
     else:
         remainder = shortened_year % 12
 
-    how_many_4s = remainder//4              #  divide remainder by 4
+    how_many_4s = remainder//4              # divide remainder by 4
     magic_number = how_many_12s + remainder + how_many_4s + day + month_code[month]
 
     # special offset section
@@ -68,7 +68,6 @@ def get_day_of_the_week(month, day, year):
         magic_number += 6
     if century in special_offset_years:
         magic_number += special_offset_years[century]
-
 
     return day_of_the_week[magic_number % 7]
 
