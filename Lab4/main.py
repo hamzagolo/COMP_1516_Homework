@@ -56,7 +56,6 @@ countries_and_capitals = (
     ['Zimbabwe', 'Harare']
 )
 
-
 countries = (
     'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia',
     'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium',
@@ -83,7 +82,6 @@ countries = (
     'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City',
     'Venezuela', 'Vietnam', 'Wales', 'Yemen', 'Zambia', 'Zimbabwe'
 )
-
 
 capitals = (
     'Kabul', 'Tirana (Tirane)', 'Algiers', 'Andorra la Vella', 'Luanda', "Saint John's", 'Buenos Aires', 'Yerevan',
@@ -125,8 +123,13 @@ def get_name_of_longest_country():
     Returns the name of the longest country from the list "countries"
     :return: Name of longest country, str
     """
+    longest_country = countries[0]
 
-    return max(countries)    # should return the longest string in list countries
+    for country in countries:
+        if len(country) > len(longest_country):
+            longest_country = country
+
+    return longest_country
 
 
 def get_number_of_capitals_containing(substring):
@@ -139,7 +142,7 @@ def get_number_of_capitals_containing(substring):
     number_of_capitals = 0
 
     for capital in capitals:
-        if substring in capital:
+        if substring.lower() in capital or substring.capitalize() in capital:
             number_of_capitals += 1
 
     return number_of_capitals
@@ -153,7 +156,7 @@ def get_countries_and_capitals_that_start_with_the_same_letter():
     countries_and_capitals_with_same_starting_letter = []
 
     for country, capital in countries_and_capitals:
-        if country[0] == capitals[0]:    # checks the first letter of both the country and the capital
+        if country[0] == capital[0]:    # checks the first letter of both the country and the capital
             countries_and_capitals_with_same_starting_letter.append(f"{country} - {capital}")
 
     return countries_and_capitals_with_same_starting_letter
@@ -190,14 +193,46 @@ def get_list_of_countries_with_this_many_letters_in_name(num_letters):
     return list_of_countries
 
 
+def get_capitals_and_countries_that_begin_and_end_with_same_letter():
+    """
+    Returns a list of capitals and countries that begin and end with the same letter
+    :return: List of capitals and countries, list
+    """
+    list_of_countries_and_capitals = []
+
+    for country, capital in countries_and_capitals:
+        if country[0] == country[-1]:
+            list_of_countries_and_capitals.append(country)
+        if capital[0] == capital[-1]:
+            list_of_countries_and_capitals.append(capital)
+
+    return list_of_countries_and_capitals
+
+
+def print_countries_in_reverse_alphabetical_order():
+    """
+    Prints the countries in reverse alphabetical order
+    :return: List of countries. list
+    """
+
+    return countries[::-1]
+
+
 def main():
 
-    print(how_many_countries())
-    print(get_name_of_longest_country())
-    print(get_number_of_capitals_containing('e'))
-    print(get_number_of_capitals_containing('z'))
-    print(get_number_of_capitals_containing("")))
-    print(get_number_of_capitals_containing('an'))
+    #print(how_many_countries())
+    #print(get_name_of_longest_country())
+    #print(get_number_of_capitals_containing('e'))
+    #print(get_number_of_capitals_containing('z'))
+    #print(get_number_of_capitals_containing("'"))
+    #print(get_number_of_capitals_containing('an'))
+    print(get_countries_and_capitals_that_start_with_the_same_letter())
+    #print(get_capital_of('canada'))
+    #print(get_capital_of('nEW zeaLAND'))
+    #print(get_capital_of('xyz'))
+    #print(get_list_of_countries_with_this_many_letters_in_name(11))
+    #print(get_list_of_countries_with_this_many_letters_in_name(15))
+    #print(get_countries_and_capitals_that_start_with_the_same_letter())
 
 
 if __name__ == "__main__":
