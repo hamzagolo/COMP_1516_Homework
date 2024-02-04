@@ -110,7 +110,64 @@ capitals = (
     'Hanoi', 'Cardiff', "Sana'a", 'Lusaka', 'Harare'
 )
 
+
+def how_many_countries():
+    """
+    Returns the number of countries in the list "countries"
+    :return: Number of countries, int
+    """
+
+    return len(countries)
+
+
+def get_name_of_longest_country():
+    """
+    Returns the name of the longest country from the list "countries"
+    :return: Name of longest country, str
+    """
+
+    return max(countries)    # should return the longest string in list countries
+
+
+def get_number_of_capitals_containing(substring):
+    """
+    Returns the number of capitals that contain inputted substring
+    :param substring: a chain of letters, str
+    :return: number of capitals, int
+    """
+
+    number_of_capitals = 0
+
+    for capital in capitals:
+        if substring in capital:
+            number_of_capitals += 1
+
+    return number_of_capitals
+
+
+def get_countries_and_capitals_that_start_with_the_same_letter():
+    """
+    Returns the
+    :return:
+    """
+
+    pass
+
+
+
+
+
+
+
 def main():
+    """
+    print(how_many_countries())
+    print(get_name_of_longest_country())
+    print(get_number_of_capitals_containing('e'))
+    print(get_number_of_capitals_containing('z'))
+    print(get_number_of_capitals_containing("")))
+    print(get_number_of_capitals_containing('an'))
+    """
     pass
 
 
