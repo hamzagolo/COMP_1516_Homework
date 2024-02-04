@@ -1,5 +1,5 @@
 # Author: Marvin Neoh
-# Date:
+# Date: 4th February 2023
 
 countries_and_capitals = (
     ['Afghanistan', 'Kabul'], ['Albania', 'Tirana (Tirane)'], ['Algeria', 'Algiers'], ['Andorra', 'Andorra la Vella'],
@@ -147,28 +147,57 @@ def get_number_of_capitals_containing(substring):
 
 def get_countries_and_capitals_that_start_with_the_same_letter():
     """
-    Returns the
-    :return:
+    Returns a list of countries and capitals that have the same starting letter
+    :return: List of countries and capitals, list
     """
+    countries_and_capitals_with_same_starting_letter = []
 
-    pass
+    for country, capital in countries_and_capitals:
+        if country[0] == capitals[0]:    # checks the first letter of both the country and the capital
+            countries_and_capitals_with_same_starting_letter.append(f"{country} - {capital}")
+
+    return countries_and_capitals_with_same_starting_letter
 
 
+def get_capital_of(country):
+    """
+    Returns the capital of the given country
+    :param country: Name of a country, str
+    :return: Capital of a country, str
+    """
+    country = country.capitalize()
+
+    if country in countries:
+        # Finds the index of the given country and uses it to access the same country in the countries_and_capitals
+        # list, then access the capital in the returned list
+        return countries_and_capitals[countries.index(country)][1]
+    else:
+        return "No such country"
 
 
+def get_list_of_countries_with_this_many_letters_in_name(num_letters):
+    """
+    Returns a list of countries with the given number of letters
+    :param num_letters: NUmber of letters, int
+    :return: List of countries, list
+    """
+    list_of_countries = []
 
+    for country in countries:
+        if len(country) == num_letters:
+            list_of_countries.append(country)
+
+    return list_of_countries
 
 
 def main():
-    """
+
     print(how_many_countries())
     print(get_name_of_longest_country())
     print(get_number_of_capitals_containing('e'))
     print(get_number_of_capitals_containing('z'))
     print(get_number_of_capitals_containing("")))
     print(get_number_of_capitals_containing('an'))
-    """
-    pass
 
 
 if __name__ == "__main__":
