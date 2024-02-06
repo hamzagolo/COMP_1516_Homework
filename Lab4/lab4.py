@@ -5,8 +5,8 @@ import login
 
 def main():
     """
-
-    :return:
+    Prompts the user to enter their first name, last name and BCIT ID to generate a default password, then asks the user
+    to change it.
     """
 
     first_name = input("Enter your first name: ")
