@@ -36,20 +36,14 @@ def change_password():
 
     specifications_met = False
 
-    special_characters = [
-        '"', '\"', '@', '_', '!', '#', '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '/', '\\', '|', '{', '}', '~',
-        ':', '[', ']',
-    ]
-
     while not specifications_met:
 
         password = input('Enter new password: ')
 
-        for character in password:
-            if character in special_characters:
-                print("Password should not contain special characters.")
+        if not no_special_characters(password):
+            print('Password should not contain any special characters.')
 
-        if len(password) < 7:  # checks for the length requirement
+        elif len(password) < 7:  # checks for the length requirement
             print('Password must have at least 7 characters.')
 
         elif password.isdigit():    # returns True if password only has numbers
@@ -66,6 +60,22 @@ def change_password():
 
         else:
             specifications_met = True
-            print(f'Your new password is: {password}')
+            print(f'Valid password. Your new password is: {password}')
 
 
+def no_special_characters(password):
+    """
+    Checks if the password contains any special characters
+    :param password: Password, str
+    :return: True is there is no special characters or False if there is, bool
+    """
+    special_characters = [
+        '"', '\"', '@', '_', '!', '#', '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '/', '\\', '|', '{', '}', '~',
+        ':', '[', ']',
+    ]
+
+    for character in password:
+        if character in special_characters:
+            return False
+
+    return True
