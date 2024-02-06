@@ -9,9 +9,9 @@ def main():
     :return:
     """
 
-    first_name=input("Enter your first name: ")
-    last_name=input("Enter your last name: ")
-    bcit_id=input("Enter your BCIT ID: ")
+    first_name = input("Enter your first name: ")
+    last_name = input("Enter your last name: ")
+    bcit_id = input("Enter your BCIT ID: ")
 
     login.generate_password(first_name, last_name, bcit_id)
     login.change_password()
