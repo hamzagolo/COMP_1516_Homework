@@ -70,8 +70,8 @@ def no_special_characters(password):
     :return: True is there is no special characters or False if there is, bool
     """
     special_characters = [
-        '\'', '\"', '@', '_', '!', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+', '<', '>', '?', '/', '\\', '|', '{',
-        '}', '`', '~', ':', '[', ']', '.', ',',
+        '\'', '\"', '@', '_', '!', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '<', '>', '?', '/', '\\',
+        '|', '{', '}', '`', '~', ':', '[', ']', '.', ',',
     ]
 
     for character in password:
