@@ -1,7 +1,5 @@
 # Author: Marvin Neoh
-# Date:
-from project import project
-
+import project
 
 def main():
     print_json_countries_and_capitals()

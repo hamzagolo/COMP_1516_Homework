@@ -1,6 +1,5 @@
 # Author: Marvin Neoh
 
-
 def main():
     print("I should not be called")
 
