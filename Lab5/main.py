@@ -168,7 +168,7 @@ def get_capital_of(country):
     :param country: Name of a country, str
     :return: Capital of a country, str
     """
-    country = country.capitalize()
+    country = country.title()
 
     if country in countries:
         # Finds the index of the given country and uses it to access the same country in the countries_and_capitals
@@ -213,29 +213,31 @@ def get_capitals_and_countries_that_begin_and_end_with_same_letter():
 def print_countries_in_reverse_alphabetical_order():
     """
     Prints the countries in reverse alphabetical order
-    :return: List of countries. list
     """
 
-    return countries[::-1]
+    print(countries[::-1])
 
 
+"""
+Used for testing
 def main():
-    # print(how_many_countries())
-    #print(get_name_of_longest_country())
-    #print(get_number_of_capitals_containing('e'))
-    #print(get_number_of_capitals_containing('z'))
-    #print(get_number_of_capitals_containing("'"))
-    #print(get_number_of_capitals_containing('an'))
-    #print(get_countries_and_capitals_that_start_with_the_same_letter())
-    #print(get_capital_of('canada'))
-    #print(get_capital_of('nEW zeaLAND'))
-    #print(get_capital_of('xyz'))
-    #print(get_list_of_countries_with_this_many_letters_in_name(11))
-    #print(get_list_of_countries_with_this_many_letters_in_name(15))
-    #print(get_capitals_and_countries_that_begin_and_end_with_same_letter())
-    #print(print_countries_in_reverse_alphabetical_order())
-    pass
+
+    print(how_many_countries())
+    print(get_name_of_longest_country())
+    print(get_number_of_capitals_containing('e'))
+    print(get_number_of_capitals_containing('z'))
+    print(get_number_of_capitals_containing("'"))
+    print(get_number_of_capitals_containing('an'))
+    print(get_countries_and_capitals_that_start_with_the_same_letter())
+    print(get_capital_of('canada'))
+    print(get_capital_of('nEW zeaLAND'))
+    print(get_capital_of('xyz'))
+    print(get_list_of_countries_with_this_many_letters_in_name(11))
+    print(get_list_of_countries_with_this_many_letters_in_name(15))
+    print(get_capitals_and_countries_that_begin_and_end_with_same_letter())
+    print_countries_in_reverse_alphabetical_order()
 
 
 if __name__ == "__main__":
     main()
+"""
