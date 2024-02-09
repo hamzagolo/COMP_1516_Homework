@@ -31,12 +31,12 @@ def to_csv_format(book_info):
 
 def to_json_format(book_info):
     """
-    Takes book_info as input and returns it in JSON format
+    Takes book_info_csv as input and returns it in JSON format
     :param book_info: Relevant book information, str
     :return: Book info in JSON format, dict
     """
 
-    book_info_split = book_info.split('/')
+    '''book_info_split = book_info.split('/')
 
     output = {
         'title': book_info_split[0],
@@ -46,7 +46,8 @@ def to_json_format(book_info):
         'price': book_info_split[4],
     }
 
-    return output
+    return output'''
+    pass
 
 
 def main():
@@ -55,9 +56,9 @@ def main():
     """
 
     book_info = get_book_info()
-
-    print(to_csv_format(book_info))
-    print(to_json_format(book_info))
+    book_info_csv = to_csv_format(book_info)
+    print(book_info_csv)
+    print(to_json_format(book_info_csv))
 
 
 if __name__ == "__main__":
