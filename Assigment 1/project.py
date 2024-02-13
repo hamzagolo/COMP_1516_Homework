@@ -41,18 +41,54 @@ def get_list_of_countries_whose_nth_letter_is(n, letter):
     output = []
 
     for country in countries:
-        if country[n-1] == letter.lower() or country[n-1] == letter.upper():
+        if country[n-1] == letter.lower() or country[n-1] == letter.upper(): # checks for both lower and upper case
             output.append(country)
 
     return output
 
+
 def get_funny_case_capital_cities(letter):
     """
-    This function creates and returns a list of capital cities that
-    :param letter:
-    :return:
+    This function creates and returns a list of capital cities that adhere to the funny case rule. A letter that
+    immediately before and after the input letter is uppercased.
+    :param letter: A character, str
+    :return: List of capital cities in funny case, list
     """
-    pass
+
+    output = []
+
+    for capital in capitals:
+
+        capital = capital.lower()
+
+        if letter in capital:
+
+            capital_list = list(capital)
+            index = 0
+            capital_list_length = len(capital_list)
+
+            while index < capital_list_length:
+
+                if capital_list[index] == letter:
+
+                    capital_list[index] = capital_list[index].lower()
+
+                    # ensures the letter immediately after the letter in within index
+                    if index+1 < capital_list_length:
+                        if capital_list[index+1] != letter:
+                            capital_list[index+1] = capital_list[index+1].upper()
+
+                    # ensures the letter immediately before the letter in within index
+                    if index-1 >= 0:
+                        if capital_list[index-1] != letter:
+                            capital_list[index-1] = capital_list[index-1].upper()
+
+                index += 1
+
+            output.append("".join(capital_list))
+
+    # will inputted letter be in upper case?
+    return output
 
 
 def get_doubled_letter_countries():
