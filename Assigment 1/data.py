@@ -1,20 +1,23 @@
 # Author: Marvin Neoh
 
 def main():
+    """
+    Does nothing
+    """
     print("I should not be called")
 
 
 countries_and_capitals = (
-    ['Afghanistan', 'Kabul'], ['Albania', 'Tirana (Tirane)'], ['Algeria', 'Algiers'],
-    ['Andorra', 'Andorra la Vella'], ['Angola', 'Luanda'], ['Antigua and Barbuda', "Saint John's"],
-    ['Argentina', 'Buenos Aires'], ['Armenia', 'Yerevan'], ['Australia', 'Canberra'], ['Austria', 'Vienna'],
-    ['Azerbaijan', 'Baku'], ['Bahamas', 'Nassau'], ['Bahrain', 'Manama'], ['Bangladesh', 'Dhaka'],
-    ['Barbados', 'Bridgetown'], ['Belarus', 'Minsk'], ['Belgium', 'Brussels'], ['Belize', 'Belmopan'],
-    ['Benin', 'Porto Novo'], ['Bhutan', 'Thimphu'], ['Bolivia', 'Sucre'], ['Bosnia and Herzegovina', 'Sarajevo'],
-    ['Botswana', 'Gaborone'], ['Brazil', 'Brasilia'], ['Brunei', 'Bandar Seri Begawan'], ['Bulgaria', 'Sofia'],
-    ['Burkina Faso', 'Ouagadougou'], ['Burundi', 'Gitega'], ['Cambodia', 'Phnom Penh'], ['Cameroon', 'Yaounde'],
-    ['Canada', 'Ottawa'], ['Cape Verde', 'Praia'], ['Central African Republic', 'Bangui'], ['Chad', "N'Djamena"],
-    ['Chile', 'Santiago'], ['China', 'Beijing'], ['Colombia', 'Bogota'], ['Comoros', 'Moroni'],
+    ['Afghanistan', 'Kabul'], ['Albania', 'Tirana (Tirane)'], ['Algeria', 'Algiers'], ['Andorra', 'Andorra la Vella'],
+    ['Angola', 'Luanda'], ['Antigua and Barbuda', "Saint John's"], ['Argentina', 'Buenos Aires'],
+    ['Armenia', 'Yerevan'], ['Australia', 'Canberra'], ['Austria', 'Vienna'], ['Azerbaijan', 'Baku'],
+    ['Bahamas', 'Nassau'], ['Bahrain', 'Manama'], ['Bangladesh', 'Dhaka'], ['Barbados', 'Bridgetown'],
+    ['Belarus', 'Minsk'], ['Belgium', 'Brussels'], ['Belize', 'Belmopan'], ['Benin', 'Porto Novo'],
+    ['Bhutan', 'Thimphu'], ['Bolivia', 'Sucre'], ['Bosnia and Herzegovina', 'Sarajevo'], ['Botswana', 'Gaborone'],
+    ['Brazil', 'Brasilia'], ['Brunei', 'Bandar Seri Begawan'], ['Bulgaria', 'Sofia'], ['Burkina Faso', 'Ouagadougou'],
+    ['Burundi', 'Gitega'], ['Cambodia', 'Phnom Penh'], ['Cameroon', 'Yaounde'], ['Canada', 'Ottawa'],
+    ['Cape Verde', 'Praia'], ['Central African Republic', 'Bangui'], ['Chad', "N'Djamena"], ['Chile', 'Santiago'],
+    ['China', 'Beijing'], ['Colombia', 'Bogota'], ['Comoros', 'Moroni'],
     ['Congo, Democratic Republic of the', 'Kinshasa'], ['Congo, Republic of the', 'Brazzaville'],
     ['Costa Rica', 'San Jose'], ["Cote d'Ivoire (Ivory Coast)", 'Yamoussoukro'], ['Croatia', 'Zagreb'],
     ['Cuba', 'Havana'], ['Cyprus', 'Nicosia'], ['Czech Republic (Czechia)', 'Prague'], ['Denmark', 'Copenhagen'],
@@ -22,15 +25,15 @@ countries_and_capitals = (
     ['Ecuador', 'Quito'], ['Egypt', 'Cairo'], ['El Salvador', 'San Salvador'], ['England', 'London'],
     ['Equatorial Guinea', 'Malabo'], ['Eritrea', 'Asmara'], ['Estonia', 'Tallinn'], ['Eswatini (Swaziland)', 'Mbabana'],
     ['Ethiopia', 'Addis Ababa'], ['Federated States of Micronesia', 'Palikir'], ['Fiji', 'Suva'],
-    ['Finland', 'Helsinki'], ['France', 'Paris'], ['Gabon', 'Libreville'], ['Gambia', 'Banjul'],
-    ['Georgia', 'Tbilisi'], ['Germany', 'Berlin'], ['Ghana', 'Accra'], ['Greece', 'Athens'],
-    ['Grenada', "Saint George's"], ['Guatemala', 'Guatemala City'], ['Guinea', 'Conakry'], ['Guinea-Bissau', 'Bissau'],
-    ['Guyana', 'Georgetown'], ['Haiti', 'Port au Prince'], ['Honduras', 'Tegucigalpa'], ['Hungary', 'Budapest'],
-    ['Iceland', 'Reykjavik'], ['India', 'New Delhi'], ['Indonesia', 'Jakarta'], ['Iran', 'Tehran'], ['Iraq', 'Baghdad'],
-    ['Ireland', 'Dublin'], ['Israel', 'Jerusalem'], ['Italy', 'Rome'], ['Jamaica', 'Kingston'], ['Japan', 'Tokyo'],
-    ['Jordan', 'Amman'], ['Kazakhstan', 'Nur-Sultan'], ['Kenya', 'Nairobi'], ['Kiribati', 'Tarawa Atoll'],
-    ['Kosovo', 'Pristina'], ['Kuwait', 'Kuwait City'], ['Kyrgyzstan', 'Bishkek'], ['Laos', 'Vientiane'],
-    ['Latvia', 'Riga'], ['Lebanon', 'Beirut'], ['Lesotho', 'Maseru'], ['Liberia', 'Monrovia'], ['Libya', 'Tripoli'],
+    ['Finland', 'Helsinki'], ['France', 'Paris'], ['Gabon', 'Libreville'], ['Gambia', 'Banjul'], ['Georgia', 'Tbilisi'],
+    ['Germany', 'Berlin'], ['Ghana', 'Accra'], ['Greece', 'Athens'], ['Grenada', "Saint George's"],
+    ['Guatemala', 'Guatemala City'], ['Guinea', 'Conakry'], ['Guinea-Bissau', 'Bissau'], ['Guyana', 'Georgetown'],
+    ['Haiti', 'Port au Prince'], ['Honduras', 'Tegucigalpa'], ['Hungary', 'Budapest'], ['Iceland', 'Reykjavik'],
+    ['India', 'New Delhi'], ['Indonesia', 'Jakarta'], ['Iran', 'Tehran'], ['Iraq', 'Baghdad'], ['Ireland', 'Dublin'],
+    ['Israel', 'Jerusalem'], ['Italy', 'Rome'], ['Jamaica', 'Kingston'], ['Japan', 'Tokyo'], ['Jordan', 'Amman'],
+    ['Kazakhstan', 'Nur-Sultan'], ['Kenya', 'Nairobi'], ['Kiribati', 'Tarawa Atoll'], ['Kosovo', 'Pristina'],
+    ['Kuwait', 'Kuwait City'], ['Kyrgyzstan', 'Bishkek'], ['Laos', 'Vientiane'], ['Latvia', 'Riga'],
+    ['Lebanon', 'Beirut'], ['Lesotho', 'Maseru'], ['Liberia', 'Monrovia'], ['Libya', 'Tripoli'],
     ['Liechtenstein', 'Vaduz'], ['Lithuania', 'Vilnius'], ['Luxembourg', 'Luxembourg'], ['Madagascar', 'Antananarivo'],
     ['Malawi', 'Lilongwe'], ['Malaysia', 'Kuala Lumpur'], ['Maldives', 'Male'], ['Mali', 'Bamako'],
     ['Malta', 'Valletta'], ['Marshall Islands', 'Majuro'], ['Mauritania', 'Nouakchott'], ['Mauritius', 'Port Louis'],
@@ -112,4 +115,5 @@ capitals = (
 )
 
 
-main()
+if __name__ == "__main__":
+    main()
