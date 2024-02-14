@@ -102,7 +102,8 @@ def get_doubled_letter_countries():
         index = 0
         while index < len(country)-1:
             if country[index] == country[index+1]:
-                temp.append([country[index], country])
+                temp.append([country[index], country])  # keeps track of the repeated letter so the list can be sorted
+
             index += 1
 
     temp.sort()
