@@ -90,11 +90,27 @@ def get_funny_case_capital_cities(letter):
 
 def get_doubled_letter_countries():
     """
-    This function creates and retuns a tuple of all the countries that have consecutive repeated letters in alphabetical
-    order by the doule letters
-    :return:
+    This function creates and returns a tuple of all the countries that have consecutive repeated letters in
+    alphabetical order by the double letters
+    :return: A tuple of countries, tuple
     """
-    pass
+
+    temp = []
+    output = []
+
+    for country in countries:
+        index = 0
+        while index < len(country)-1:
+            if country[index] == country[index+1]:
+                temp.append([country[index], country])
+            index += 1
+
+    temp.sort()
+
+    for element in temp:
+        output.append(element[1])
+
+    return tuple(output)
 
 
 if __name__ == "__main__":
