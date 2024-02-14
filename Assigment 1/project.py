@@ -25,8 +25,6 @@ def print_json_countries_and_capitals():
         })
         count += 1
 
-    # concern 1: quotation marks is single instead of doule
-    # concern 2: output in console does not have the proper spacing
     print(output)
 
 
@@ -41,7 +39,7 @@ def get_list_of_countries_whose_nth_letter_is(n, letter):
     output = []
 
     for country in countries:
-        if country[n-1] == letter.lower() or country[n-1] == letter.upper(): # checks for both lower and upper case
+        if country[n-1] == letter.lower() or country[n-1] == letter.upper():    # checks for both lower and upper case
             output.append(country)
 
     return output
@@ -54,6 +52,8 @@ def get_funny_case_capital_cities(letter):
     :param letter: A character, str
     :return: List of capital cities in funny case, list
     """
+
+    letter = letter.lower()     # ensures the function work even with an uppercase input
 
     output = []
 
@@ -74,20 +74,17 @@ def get_funny_case_capital_cities(letter):
                     capital_list[index] = capital_list[index].lower()
 
                     # ensures the letter immediately after the letter in within index
-                    if index+1 < capital_list_length:
-                        if capital_list[index+1] != letter:
-                            capital_list[index+1] = capital_list[index+1].upper()
+                    if index+1 < capital_list_length and capital_list[index+1] != letter:
+                        capital_list[index+1] = capital_list[index+1].upper()
 
                     # ensures the letter immediately before the letter in within index
-                    if index-1 >= 0:
-                        if capital_list[index-1] != letter:
-                            capital_list[index-1] = capital_list[index-1].upper()
+                    if index-1 >= 0 and capital_list[index-1] != letter:
+                        capital_list[index-1] = capital_list[index-1].upper()
 
                 index += 1
 
             output.append("".join(capital_list))
 
-    # will inputted letter be in upper case?
     return output
 
 
