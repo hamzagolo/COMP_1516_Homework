@@ -2,7 +2,7 @@
 
 def main():
     """
-    Does nothing
+    This function does nothing and should not be called
     """
     print("I should not be called")
 

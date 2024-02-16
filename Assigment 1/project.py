@@ -4,8 +4,7 @@ from data import countries_and_capitals, countries, capitals
 
 def main():
     """
-    does nothing
-    :return:
+    This function does nothing and should not be called.
     """
     print("I should not be called")
 
@@ -102,7 +101,8 @@ def get_doubled_letter_countries():
         index = 0
         while index < len(country)-1:
             if country[index] == country[index+1]:
-                temp.append([country[index], country])  # keeps track of the repeated letter so the list can be sorted
+                # keeps track of the repeated letter at index 0 so the list can be sorted
+                temp.append([country[index], country])
 
             index += 1
 
