@@ -15,7 +15,6 @@ def get_square_numbers_between(first, last):
     first_root, last_root = math.ceil(math.sqrt(int(first))), math.floor(math.sqrt(int(last)))
 
     for number in range(first_root, last_root+1):
-        print(number)
         output.append(number**2)
 
     return output
@@ -36,11 +35,13 @@ def process_user_input():
         else:
             not_zero = False
 
-    max_num, min_num, sum_num = output[0], output[0], int(output[0])
+    max_num = min_num = sum_num = int(output[0])
 
     for number in output[1:]:
 
-        sum_num += int(number)
+        number = int(number)
+
+        sum_num += number
 
         if number > max_num:
             max_num = number
