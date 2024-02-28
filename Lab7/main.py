@@ -60,10 +60,4 @@ def get_league_descriptions_set():
     This function returns a set of all sports_leagues key and values
     :return: Sports_leagues keys and values, set
     """
-
-def main():
-    delete_league()
-
-
-if __name__ == "__main__":
-    main()
+    return sports_leagues
