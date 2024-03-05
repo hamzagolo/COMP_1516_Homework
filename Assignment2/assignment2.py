@@ -19,7 +19,7 @@ def write_countries_capitals_to_file(filename):
     # checks if the file has a ".txt" extension
     file_extension_check = check_file_extension(filename)
 
-    # checks if any error is raised
+    # checks if any error is raised and reloops if there are any unsatisfied conditions
     while special_character_check or not length_check or not file_extension_check:
         filename = input("Please enter a valid filename: ")
         special_character_check = check_characters(filename)
@@ -69,19 +69,54 @@ def save_capitals():
     This function creates multiple files and writes data into them that is based on certain patterns.
     """
 
-    # this file contains capitals with three consecutive vowels
+    # this segment of code will create the file that contains capitals with three consecutive vowels
     with open("vowel_vowel_vowel.txt", "w") as file:
         for capital in capitals:
             if re.search("[aeiouAEIOU]{3,}", capital):
                 file.write(f"{capital}\n")
 
+    # this segment of code will create the file that contains capitals with three consecutive consonants
+    with open("cons_cons_cons.txt", "w") as file:
+        for capital in capitals:
+            if re.search("[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{3,}", capital):
+                file.write(f"{capital}\n")
+
+    # this segment of code will create the file the contains capitals that have an i somewhere before e
+    with open("i_before_e.txt", "w") as file:
+        for capital in capitals:
+            if re.search("i.*e", capital):
+                file.write(f"{capital}\n")
+
+    # this segment of code will create the file the contains capitals that starts and ends with the letter a
+    with open("a_a.txt", "w") as file:
+        for capital in capitals:
+            if re.search("^A", capital) and re.search("a$", capital):
+                file.write(f"{capital}\n")
+
+    # this segment of code will create the file that contains capitals that ends with a vowel
+    with open("end_with_vowel.txt", "w") as file:
+        for capital in capitals:
+            if re.search("[aeiouAEIOU]$", capital):
+                file.write(f"{capital}\n")
+
+    # this segment of code will create the file that contains capitals that has an apostrophe, a space, or x
+    with open("weird.txt", "w") as file:
+        for capital in capitals:
+            if re.search("[' x]", capital):
+                file.write(f"{capital}\n")
+
+    # this segment of code will create the file that contains capitals taht does not start with a-e, l-p, or s
+    with open("not_start.txt", "w") as file:
+        for capital in capitals:
+            if re.search("^[^a-el-psA-EL-PS]", capital):
+                file.write(f"{capital}\n")
 
 
 def main():
     """
     This function does nothing, do not call this function
     """
-    pass
+    print("This function does nothing, do not call this function")
 
 
 if __name__ == "__main__":

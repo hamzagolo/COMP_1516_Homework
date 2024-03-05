@@ -1,7 +1,4 @@
 # Author: Marvin Neoh
-# Date:
-
-# START HERE AND PASTE INTO YOUR LAB IN YOUR IDE
 
 countries_and_capitals = (
     ['Afghanistan', 'Kabul'], ['Albania', 'Tirana (Tirane)'], ['Algeria', 'Algiers'], ['Andorra', 'Andorra la Vella'],
@@ -117,7 +114,7 @@ def main():
     """
     This function does nothing, do not call this function
     """
-    pass
+    print("This function does nothing, do not call this function")
 
 
 if __name__ == "__main__":
