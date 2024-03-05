@@ -10,29 +10,28 @@ def is_valid_license_plate(input_string):
     :return: True if the parameter matches the license plate pattern, false if it doesn't, boolean
     """
 
-    # check the length after stripping space and hyphen, has to be equal to 6
-    input_string = input_string.strip(" -")
-    if len(input_string) != 6:
+    # check the length of the input string
+
+    if (re.match("^[A-Z]{3}[0-9]{3}$", input_string) or
+            re.match("^[0-9]{3}[A-Z]{3}$", input_string) or
+            re.match("^[A-Z]{2}[0-9]{1} [0-9]{2}[A-Z]{1}$", input_string) or
+            re.match("^[A-Z]{2}[0-9]{1}-[0-9]{2}[A-Z]{1}$", input_string)):
+        return True
+
+    else:
         return False
 
-    # check if all letters are uppercased
-    if not input_string == input_string.upper():
-        return False
 
-
-    # check if it follows the pattern of 3 letters and 3 digits, and the reverse
-    # check if
-
-    pass
-
-
-def is_valid_pythong_variable_name(input_string):
+def is_valid_python_variable_name(input_string):
     """
     This function checks if the input string is a valid python variable name. It should have between one and 32
      characters total: all characters must be lowercase letters or underscores, but no multiple underscore in a row
     :return: True if the parameter matches the criteria, false if it doesn't, boolean
     """
-    pass
+    if re.match("^[a-z](?!.*_{2,})(?:[a-z_]){0,31}$", input_string):
+        return True
+    else:
+        return False
 
 
 def is_valid_email_address(input_string):
@@ -42,8 +41,20 @@ def is_valid_email_address(input_string):
     have 2 to 5 characters.
     :return: True if the parameter matches the criteria, false if it doesn't, boolean
     """
+    email_data = re.split('@', input_string)
+    username = email_data[0]
+    domain_data = re.split('[.]', email_data[1])
+    domain_name, top_level_domain = domain_data[0], domain_data[1]
 
-    pass
+    if (
+            re.match("^(?!_)(?!.*_$)[a-zA-Z_]{1,256}$", username) and
+            re.match("^[a-zA-Z]{0,31}$", domain_name) and
+            re.match("^[a-zA-Z]{1,5}$", top_level_domain)
+    ):
+        return True
+
+    else:
+        return False
 
 
 def is_valid_human_height(input_string):
@@ -53,13 +64,17 @@ def is_valid_human_height(input_string):
     :return:
     """
 
-
-
-    pass
+    if re.match("^(?:[2-8]'(?:1[0-1]|[2-9]|0?[1-9])\")$", input_string):
+        return True
+    else:
+        return False
 
 
 def main():
-    pass
+    #print(is_valid_license_plate("AB1-23C"))
+    #print(is_valid_python_variable_name(""))
+    #print(is_valid_email_address("Jason_harrison@bcit.ca"))
+    print(is_valid_human_height('9\'10"'))
 
 
 if __name__ == "__main__":
