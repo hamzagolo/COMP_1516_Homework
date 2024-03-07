@@ -12,10 +12,10 @@ def is_valid_license_plate(input_string):
 
     # check the length of the input string
 
-    if (re.match("^[A-Z]{3}[0-9]{3}$", input_string) or
-            re.match("^[0-9]{3}[A-Z]{3}$", input_string) or
-            re.match("^[A-Z]{2}[0-9] [0-9]{2}[A-Z]$", input_string) or
-            re.match("^[A-Z]{2}[0-9]-[0-9]{2}[A-Z]$", input_string)):
+    if (re.match(r"^[A-Z]{3}[0-9]{3}$", input_string) or
+            re.match(r"^[0-9]{3}[A-Z]{3}$", input_string) or
+            re.match(r"^[A-Z]{2}[0-9] [0-9]{2}[A-Z]$", input_string) or
+            re.match(r"^[A-Z]{2}[0-9]-[0-9]{2}[A-Z]$", input_string)):
         return True
 
     else:
@@ -28,7 +28,7 @@ def is_valid_python_variable_name(input_string):
      characters total: all characters must be lowercase letters or underscores, but no multiple underscore in a row
     :return: True if the parameter matches the criteria, false if it doesn't, boolean
     """
-    if re.match("^[a-z](?!.*_{2,})(?:[a-z_]){0,31}$", input_string):
+    if re.match(r"^[a-z](?!.*_{2,})(?:[a-z_]){0,31}$", input_string):
         return True
     else:
         return False
@@ -47,9 +47,9 @@ def is_valid_email_address(input_string):
     domain_name, top_level_domain = domain_data[0], domain_data[1]
 
     if (
-            re.match("^(?!_)(?!.*_$)[a-zA-Z_]{1,256}$", username) and
-            re.match("^[a-zA-Z]{0,31}$", domain_name) and
-            re.match("^[a-zA-Z]{1,5}$", top_level_domain)
+            re.match(r"^(?!_)(?!.*_$)[a-zA-Z_]{1,256}$", username) and
+            re.match(r"^[a-zA-Z]{0,31}$", domain_name) and
+            re.match(r"^[a-zA-Z]{1,5}$", top_level_domain)
     ):
         return True
 
