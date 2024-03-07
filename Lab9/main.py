@@ -14,8 +14,8 @@ def is_valid_license_plate(input_string):
 
     if (re.match("^[A-Z]{3}[0-9]{3}$", input_string) or
             re.match("^[0-9]{3}[A-Z]{3}$", input_string) or
-            re.match("^[A-Z]{2}[0-9]{1} [0-9]{2}[A-Z]{1}$", input_string) or
-            re.match("^[A-Z]{2}[0-9]{1}-[0-9]{2}[A-Z]{1}$", input_string)):
+            re.match("^[A-Z]{2}[0-9] [0-9]{2}[A-Z]$", input_string) or
+            re.match("^[A-Z]{2}[0-9]-[0-9]{2}[A-Z]$", input_string)):
         return True
 
     else:
