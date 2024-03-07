@@ -71,10 +71,10 @@ def is_valid_human_height(input_string):
 
 
 def main():
-    #print(is_valid_license_plate("AB1-23C"))
-    #print(is_valid_python_variable_name(""))
-    #print(is_valid_email_address("Jason_harrison@bcit.ca"))
-    print(is_valid_human_height("8'01in"))
+    """
+    This should not be called
+    """
+    pass
 
 
 if __name__ == "__main__":
