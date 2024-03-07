@@ -60,11 +60,11 @@ def is_valid_email_address(input_string):
 def is_valid_human_height(input_string):
     """
     This function checks if the input string is a valid human height. It should be between 2 to 8 feet and 0 to 11
-    inches. The word "in" is an acceptable alternative to double quation marks for inches.
+    inches. The word "in" is an acceptable alternative to double quotation marks for inches.
     :return:
     """
-
-    if re.match("^(?:[2-8]'(?:1[0-1]|[2-9]|0?[1-9])\")$", input_string):
+    print(input_string)
+    if re.match(r"^(?:[2-8]'(?:1[0-1]|[2-9]|0?[1-9])(\"|in))$", input_string):
         return True
     else:
         return False
@@ -74,7 +74,7 @@ def main():
     #print(is_valid_license_plate("AB1-23C"))
     #print(is_valid_python_variable_name(""))
     #print(is_valid_email_address("Jason_harrison@bcit.ca"))
-    print(is_valid_human_height('9\'10"'))
+    print(is_valid_human_height("8'01in"))
 
 
 if __name__ == "__main__":
