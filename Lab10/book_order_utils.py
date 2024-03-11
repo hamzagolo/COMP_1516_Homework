@@ -13,20 +13,45 @@ def validate_book_order_details(order_num, title, author, isbn, year_pub, quanti
     :param quantity: Number of copies purchased, str
     :param cost_cad: Price of book, str
     """
-    if not re.search(r"\d+", order_num):
-        raise ValueError("Order Number is invalid.")
+    # Order Number: one or more integer values
+    if re.search(r"[^0-9]+", order_num):
+        raise ValueError("Order Number is invalid")
 
-    if not re.search(r"[A-Za-z\s]+", title):
-        raise ValueError("Title is invalid.")
+    # Title: One or more lower or uppercase letters
+    if not re.search(r"^[A-Za-z ]+$", title):
+        raise ValueError("Title is invalid")
 
-    if not re.search(r"[A-Za-z\s']+", author):
-        raise ValueError("Author is invalid.")
+    # Author: Zero or more lower or upper case letter with apostrophe
+    if not re.search(r"^[A-Za-z\s' ]*$", author):
+        raise ValueError("Author is invalid")
 
+    # ISBN: Must be integer
     if not re.search(r"^\d+$", isbn):
-        raise ValueError("ISBN must be an integer.")
+        raise TypeError("ISBN must be an integer")
 
-    if not re.search(r"^\d+{4,20}$", title):
-        raise ValueError("Title is invalid.")
+    # ISBN: Must be between 4 and 20 digits
+    if not re.search(r"^\d{4,20}$", isbn):
+        raise ValueError("ISBN is invalid")
+
+    # Year Published: Must be integers
+    if not re.search(r"^\d+$", year_pub):
+        raise TypeError("Year must be an integer")
+
+    # Year Published: Must be 4 digits exactly
+    if not re.search(r"^\d{4}$", year_pub):
+        raise ValueError("Year is invalid")
+
+    # Quantity: Must be integers
+    if not re.search(r"^\d+$", quantity):
+        raise TypeError("Quantity must be an integer")
+
+    # Quantity: Must be between 0 and 1000
+    if not 0 <= int(quantity) <= 1000:
+        raise ValueError("Quantity is invalid")
+
+    # Cost: Must be a floating point value with 2 decimal places
+    if not re.search(r"^\d+\.\d{2}$", cost_cad):
+        raise ValueError("Cost is invalid")
 
 
 def calculate_per_book_cost_cad(cost_cad, quantity):
@@ -52,10 +77,12 @@ def write_book_order_details(filename, title, author, isbn, year_pub, quantity, 
     """
     pass
 
+
 def main():
     """
     This should not be called
     """
+
     pass
 
 
