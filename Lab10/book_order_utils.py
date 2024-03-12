@@ -79,8 +79,10 @@ def write_book_order_details(filename, title, author, isbn, year_pub, quantity, 
     :param cost_cad: Total rice of order, float
     :param unit_cost_cad: Price of one book, float
     """
+    filename = filename+'.txt'
+
     if not os.path.isfile(filename):
-        with open(filename, 'w' ) as file:
+        with open(filename, 'w') as file:
             file.write(
                 f'BOOK ORDER\n'
                 f'title={title}\n'
