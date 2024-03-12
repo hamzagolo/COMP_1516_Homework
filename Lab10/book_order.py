@@ -29,7 +29,7 @@ def main():
     except TypeError as t:
         print(f"Type Error: {t}")
 
-    except ZeroDivisionError as z:
+    except ZeroDivisionError:
         print("No Books in Order")
 
 
