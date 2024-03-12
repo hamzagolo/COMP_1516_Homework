@@ -1,5 +1,6 @@
 # Author: Marvin Neoh
 import re
+import os
 
 
 def validate_book_order_details(order_num, title, author, isbn, year_pub, quantity, cost_cad):
@@ -60,7 +61,10 @@ def calculate_per_book_cost_cad(cost_cad, quantity):
     :param cost_cad: Total price of order in Canadian dollars, float
     :param quantity: Number of books in order, int
     """
-    pass
+
+    output = cost_cad / quantity
+
+    return output
 
 
 def write_book_order_details(filename, title, author, isbn, year_pub, quantity, cost_cad, unit_cost_cad):
@@ -75,7 +79,20 @@ def write_book_order_details(filename, title, author, isbn, year_pub, quantity, 
     :param cost_cad: Total rice of order, float
     :param unit_cost_cad: Price of one book, float
     """
-    pass
+    if not os.path.isfile(filename):
+        with open(filename, 'w' ) as file:
+            file.write(
+                f'BOOK ORDER\n'
+                f'title={title}\n'
+                f'author={author}\n'
+                f'isbn={isbn}\n'
+                f'year_pub={year_pub}\n'
+                f'quantity={quantity}\n'
+                f'cost_cad={cost_cad}\n'
+                f'unit_cost_cad={unit_cost_cad}\n'
+            )
+    else:
+        raise ValueError("Order file name already exists!")
 
 
 def main():
