@@ -34,7 +34,7 @@ class Car:
         This function returns a string with the details of the car
         :return: details of the car, str
         """
-        car_details = f"{self._year} {self._make} {self._model} for sale for ${self._price_usd} USD"
+        car_details = f"{self._year} {self._make} {self._model} for sale for ${self._price_usd:.2f} USD"
 
         return car_details
 
@@ -47,7 +47,10 @@ class Car:
 
 
 def main():
-    pass
+    """
+    This functions does nothing
+    """
+    print("This function does nothing, do not call this function.")
 
 
 if __name__ == "__main__":
