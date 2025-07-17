@@ -1,5 +1,7 @@
 # Marvin Neoh and Henry Motloch
-
+#hello mneoh thank you for your thank you for sharing the codes it has been a helpfull tool. i am reaching out to know if you might have the code for the final exam 
+#the practical or the theory one i would really appreciate. this is my instagram # wildb_east1 
+#might be a funny wasy to connect but ignore merging this .
 # a
 first_name = input("Enter your first name:")
 print("Hello, "+first_name)
